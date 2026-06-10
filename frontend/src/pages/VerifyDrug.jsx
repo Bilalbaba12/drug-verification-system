@@ -57,9 +57,9 @@ function VerifyDrug() {
         {isScanning ? (
           <div className="mb-6 rounded overflow-hidden border-4 border-green-500">
             <Scanner 
-              onScan={handleScan}
-              onError={(err) => console.log(err)} 
-            />
+                onScan={handleScan}
+                onError={(err) => setStatus({ type: 'error', message: `Camera Access Denied: Please check your browser permissions. (${err.message})` })} 
+/>
             <p className="text-center text-sm text-gray-500 mt-2 font-semibold">Point camera at the drug's QR Code</p>
             <button 
               onClick={() => setIsScanning(false)}

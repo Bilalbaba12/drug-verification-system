@@ -9,7 +9,7 @@ function PharmacistDashboard() {
   const token = localStorage.getItem('nafdac_token');
 
   const fetchDrugs = async () => {
-    const res = await fetch('http://localhost:8000/api/drugs', {
+    const res = await fetch('https://nafdac-backend-api.onrender.com', {
       headers: { 'Authorization': `Bearer ${token}` }
     });
     if(res.ok) {
@@ -26,7 +26,7 @@ function PharmacistDashboard() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:8000/api/drugs', {
+      const response = await fetch('https://nafdac-backend-api.onrender.com', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
         body: JSON.stringify(formData),

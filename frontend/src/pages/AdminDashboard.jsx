@@ -9,11 +9,11 @@ function AdminDashboard() {
 
   const fetchData = async () => {
     // Fetch Reports
-    const repRes = await fetch('http://localhost:8000/api/reports', { headers: { 'Authorization': `Bearer ${token}` }});
+    const repRes = await fetch('https://nafdac-backend-api.onrender.com', { headers: { 'Authorization': `Bearer ${token}` }});
     if(repRes.ok) setReports(await repRes.json());
     
     // Fetch Drugs
-    const drugRes = await fetch('http://localhost:8000/api/drugs', { headers: { 'Authorization': `Bearer ${token}` }});
+    const drugRes = await fetch('https://nafdac-backend-api.onrender.com', { headers: { 'Authorization': `Bearer ${token}` }});
     if(drugRes.ok) setDrugs(await drugRes.json());
   };
 

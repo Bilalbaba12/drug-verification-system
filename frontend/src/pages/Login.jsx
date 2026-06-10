@@ -17,7 +17,7 @@ function Login() {
 
     try {
       // NOTE: Change this to your live Render URL when pushing to production!
-      const response = await fetch('http://localhost:8000/api/login', {
+      const response = await fetch('https://nafdac-backend-api.onrender.com', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: formData,

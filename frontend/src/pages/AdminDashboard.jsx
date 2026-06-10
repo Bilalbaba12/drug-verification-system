@@ -9,11 +9,11 @@ function AdminDashboard() {
 
   const fetchData = async () => {
     // Fetch Reports
-    const repRes = await fetch('https://nafdac-backend-api.onrender.com', { headers: { 'Authorization': `Bearer ${token}` }});
+    const repRes = await fetch('https://nafdac-backend-api.onrender.com/api/reports', { headers: { 'Authorization': `Bearer ${token}` }});
     if(repRes.ok) setReports(await repRes.json());
     
     // Fetch Drugs
-    const drugRes = await fetch('https://nafdac-backend-api.onrender.com', { headers: { 'Authorization': `Bearer ${token}` }});
+    const drugRes = await fetch('https://nafdac-backend-api.onrender.com/api/drugs', { headers: { 'Authorization': `Bearer ${token}` }});
     if(drugRes.ok) setDrugs(await drugRes.json());
   };
 
@@ -23,7 +23,7 @@ function AdminDashboard() {
   }, []);
 
   const handleApprove = async (id) => {
-    await fetch(`http://localhost:8000/api/drugs/${id}/approve`, {
+    await fetch(`https://nafdac-backend-api.onrender.com/api/drugs/${id}/approve`, {
       method: 'PUT',
       headers: { 'Authorization': `Bearer ${token}` }
     });
@@ -31,7 +31,7 @@ function AdminDashboard() {
   };
 
   const handleDeleteReport = async (id) => {
-    await fetch(`http://localhost:8000/api/reports/${id}`, {
+    await fetch(`https://nafdac-backend-api.onrender.com/api/reports/${id}`, {
       method: 'DELETE',
       headers: { 'Authorization': `Bearer ${token}` }
     });

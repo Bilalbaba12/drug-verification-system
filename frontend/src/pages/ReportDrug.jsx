@@ -21,7 +21,7 @@ function ReportDrug() {
     setStatus({ type: 'loading', message: 'Submitting your report to NAFDAC...' });
 
     try {
-      const response = await fetch('https://nafdac-backend-api.onrender.com', {
+      const response = await fetch('https://nafdac-backend-api.onrender.com/api/report', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -13,7 +13,7 @@ function VerifyDrug() {
 
     try {
       // NOTE: Change this to your Render URL when pushing to production!
-      const response = await fetch(`https://nafdac-backend-api.onrender.com`);
+      const response = await fetch(`https://nafdac-backend-api.onrender.com/api/verify/${number}`);
       
       // --- Catch the Rate Limit Error ---
       if (response.status === 429) {
